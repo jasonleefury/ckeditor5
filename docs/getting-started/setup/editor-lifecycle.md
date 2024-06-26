@@ -2,7 +2,7 @@
 category: setup
 meta-title: Editor lifecycle | CKEditor 5 documentation
 order: 20
-modified_at: 2024-05-06
+modified_at: 2024-06-25
 ---
 
 # Editor lifecycle
@@ -17,7 +17,7 @@ Regardless of the chosen type, creating an editor is done using the static `crea
 	Every editor class may accept different parameters in the `create()` method and may handle the initialization differently. For instance, the classic editor will **replace** the given element with an editor, while the inline editor will use the given element to initialize an editor on it. The decoupled document editor needs to initialize the toolbar separately from the editable area. See each editor's documentation to learn the details.
 </info-box>
 
-### Example &nbsp; classic editor
+### Example: Classic editor
 
 Add an element that CKEditor&nbsp;5 should replace on your HTML page:
 
@@ -47,12 +47,12 @@ ClassicEditor
 After creation, the editor will appear on the page in the selected area.
 
 <info-box hint>
-	Inline, balloon, and balloon block editors are initialized in the same way.
+	Inline and balloon editors types are initialized in the same way.
 </info-box>
 
-### Example &nbsp; decoupled editor
+### Example: Decoupled editor
 
-Add the elements where CKEditor&nbsp5 should initialize the toolbar and the editable to your page:
+Add the elements where CKEditor&nbsp;5 should initialize the toolbar and the editable to your page:
 
 ```html
 <!-- The toolbar will be rendered in this container. -->
@@ -95,7 +95,7 @@ The simplest way is to save the reference to the editor somewhere after you crea
 })
 
 // Or with the await (if your setup supports it):
-const editor = await ClassicEditor( /* ... */  );
+const editor = await ClassicEditor.create( /* ... */  );
 ```
 
 ## Destroying the editor with `destroy()`
